@@ -1,0 +1,27 @@
+plugins {
+	id 'java'	
+}
+
+group = 'com.ngtec'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+	testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '5.5.0'
+	testImplementation 'org.hamcrest:hamcrest:2.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+    enableAssertions = true
+}
+
