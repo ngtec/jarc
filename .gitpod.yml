@@ -2,7 +2,7 @@ image:
     file: .gitpod.Dockerfile
 tasks:
     - init: gradle build
-    command: gradle run
+    - command: gradle run
     - command: |
     export DEV_ENVIRONMENT_HOST=`gp url 3000`
     java <application-entry>
