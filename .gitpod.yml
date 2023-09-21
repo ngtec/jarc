@@ -1,2 +1,14 @@
 image:
     file: .gitpod.Dockerfile
+tasks:
+    - init: gradle build
+    command: gradle run
+    - command: |
+    export DEV_ENVIRONMENT_HOST=`gp url 3000`
+    java <application-entry>
+ports:
+    - port: 3000
+      onOpen: open-browser
+vscode:
+    extensions:
+        - vscjava.vscode-java-pack
